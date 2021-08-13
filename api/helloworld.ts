@@ -7,7 +7,9 @@ export default (request: VercelRequest, response: VercelResponse) => {
   const [pattern, flags] = request.body.regex.slice(1).split('/')
   const regex = new RegExp(pattern, flags)
 
-  response
-    .status(200)
-    .send(`Hello from ${prompt.match(regex).groups.target || 'the beyond!'}!`)
+  response.status(200).json({
+    content: `Hello from ${
+      prompt.match(regex).groups.target || 'the beyond!'
+    }!`,
+  })
 }
