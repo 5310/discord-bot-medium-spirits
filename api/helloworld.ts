@@ -1,7 +1,8 @@
 import { VercelRequest, VercelResponse } from '@vercel/node'
 
 export default (request: VercelRequest, response: VercelResponse) => {
-  console.log(request.body)
+  console.debug(request.body)
+
   const prompt = request.body.content.trim()
   const regex = /^(hullo|hello|hi|hey) *(?<target>.*)/i
 
