@@ -9,5 +9,5 @@ export default (request: VercelRequest, response: VercelResponse) => {
 
   response
     .status(200)
-    .send(`Hello from ${prompt.match(regex).groups.target ?? 'the beyond!'}!`)
+    .send(`Hello from ${prompt.match(regex).groups.target || 'the beyond!'}!`)
 }
