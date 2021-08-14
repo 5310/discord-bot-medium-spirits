@@ -5,7 +5,7 @@ export const manifest = {
   description: 'Echoes whatever is invoked as the `s` query',
   examples: {
     type: 'reply',
-    trigger: '/^Marco/i',
+    trigger: '/^Marco[?!]*/i',
     endpoint: '.../echo?s=Polo!',
     examples: [{ prompt: 'Marco!', result: 'Polo!' }],
   },
