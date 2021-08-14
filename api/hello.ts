@@ -1,8 +1,20 @@
 import { VercelRequest, VercelResponse } from '@vercel/node'
 
-export default (request: VercelRequest, response: VercelResponse) => {
-  console.debug(request.body)
+export const manifest = {
+  type: 'reply',
+  description: 'Says hello',
+  examples: {
+    type: 'reply',
+    trigger: '/^(hullo|hello|hi|hey).*/i',
+    endpoint: '.../hello',
+    examples: [
+      { prompt: 'Hi!', result: 'Hello from the beyond!' },
+      { prompt: 'Hello World!', result: 'Hello from the World!' },
+    ],
+  },
+}
 
+export default (request: VercelRequest, response: VercelResponse) => {
   try {
     const prompt = request.body.content.trim()
     const regex = /^(hullo|hello|hi|hey) *(?<target>.*)/i
