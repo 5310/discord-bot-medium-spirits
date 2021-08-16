@@ -11,7 +11,7 @@ export const manifest = {
   },
 }
 
-export default (request: VercelRequest, response: VercelResponse) => {
+export default (request: VercelRequest, response: VercelResponse): void => {
   try {
     const content = request.query.s
     if (content === undefined) throw new Error('No string given to echo')

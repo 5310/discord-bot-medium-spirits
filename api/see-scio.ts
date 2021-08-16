@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node'
 
-export default (request: VercelRequest, response: VercelResponse) => {
+export default (request: VercelRequest, response: VercelResponse): void => {
   try {
     if (
       request.body.content

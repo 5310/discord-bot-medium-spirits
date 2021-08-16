@@ -14,7 +14,7 @@ export const manifest = {
   },
 }
 
-export default (request: VercelRequest, response: VercelResponse) => {
+export default (request: VercelRequest, response: VercelResponse): void => {
   try {
     const prompt = request.body.content.trim()
     const regex = /^(hullo|hello|hi|hey) *(?<target>.*)/i
