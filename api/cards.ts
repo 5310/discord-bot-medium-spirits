@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { VercelRequest, VercelResponse } from '@vercel/node'
 
 const RANKS = [...'𝗔𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝗫𝗝𝗤𝗞']
