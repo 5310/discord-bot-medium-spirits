@@ -1,8 +1,8 @@
 import { VercelRequest, VercelResponse } from '@vercel/node'
 
-const RANKS = [...'𝗔𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝗫𝗝𝗤𝗞']
+const RANKS = [...'Ａ２３４５６７８９ＸＪＱＫ']
 const SUITS = [...'♠♥♦♣']
-const JOKERS = '🃟🃏'
+const JOKER = '🃟🃏'
 
 const zip = (xs: unknown[], ys: unknown[]) =>
   xs.flatMap((x) => ys.map((y) => `${x}${y}`))
@@ -20,7 +20,7 @@ const shuffle = (xs: unknown[]) => {
 const limit = (min: number, max: number, x: number) =>
   x < min ? min : x > max ? max : x
 
-const DECK = [...zip(RANKS, SUITS), JOKERS, JOKERS]
+const DECK = [...zip(RANKS, SUITS), JOKER, JOKER]
 
 export default (request: VercelRequest, response: VercelResponse): void => {
   try {
