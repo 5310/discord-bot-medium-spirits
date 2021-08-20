@@ -33,4 +33,5 @@ export default (request: VercelRequest, response: VercelResponse): void => {
   } catch (e) {
     response.status(400)
   }
+  response.status(204)
 }

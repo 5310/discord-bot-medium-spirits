@@ -23,4 +23,5 @@ export default (request: VercelRequest, response: VercelResponse): void => {
       content: 'The spirit refuses to greet you...',
     })
   }
+  response.status(204)
 }
