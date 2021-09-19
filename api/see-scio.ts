@@ -4,9 +4,9 @@ export default (request: VercelRequest, response: VercelResponse): void => {
   try {
     if (
       request.body.content
-        .replace(/[^s$§5zc©k3<i1|eeyo0()°℅]/gi, '')
+        .replace(/[^s$§5zc©k3<i1\|eeyo0()°℅]/gi, '')
         .trim()
-        .match(/(s|\$|§|5|z)+(c|©|k|<)+(i|1|\||ee)+(o|0|°|yo)+℅+/i) &&
+        .match(/(s|\$|§|5|z)+(((c|©|k|<)+(i|1|\||ee)+(o|0|°|yo)+)?℅?)/i) &&
       !request.body.content.match(/scio/i)
     )
       response.status(200).send('😒') // ok
